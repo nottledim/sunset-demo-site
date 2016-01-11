@@ -1,0 +1,34 @@
+mixin menu(items, sel)
+  - each item in items
+    if item.m == 'solar'
+      li.solar
+        if item.m == sel  
+          a.chosen(href='#{item.l}', title="Current page") #{item.m}
+        else
+          a(href='#{item.l}', title="#{item.t}") #{item.m}
+    else
+      li
+        if item.m == sel  
+          a.chosen(href='#{item.l}', title="Current page") #{item.m}
+        else
+          a(href='#{item.l}', title="#{item.t}") #{item.m}
+
+mixin list(items, sel)
+  - each item in items
+    if item.m == sel  
+      li.chosen
+        a(href='#{item.l}', title="Current page") #{item.m}
+    else
+       li
+         a(href='#{item.l}', title="#{item.t}") #{item.m}
+
+mixin js(scripts)
+  - each js in scripts
+    script(src="/js/#{js}", type="text/javascript" )
+
+mixin css(styles)
+  - each style in styles
+    link(href="/css/#{style}", rel="stylesheet", type="text/css")
+
+mixin set(k, v)
+  script { #{k} "#{v}" }

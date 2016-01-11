@@ -1,0 +1,8 @@
+{
+    "template": "solar.jade",
+    "title": "Fernietickle Solar Panels",
+    "menu": "Fernietickle",
+    "solarsite": "http://www.fouter.net",
+    "wstn": "egph",
+    "wfcst": "ff"
+}

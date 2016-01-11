@@ -1,0 +1,11 @@
+extends sunset
+
+block content
+  != page.html
+
+append scripts
+  mixin css(['weather.css'])
+
+append footscripts
+  script
+    getWeather('#{page.metadata.wstn}')

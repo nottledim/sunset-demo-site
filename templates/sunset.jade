@@ -1,0 +1,93 @@
+doctype html
+html(lang='en', xmlns='http://www.w3.org/1999/xhtml')
+
+include mixin.inc.jade
+
+head
+    title= page.title
+    meta(http-equiv='Content-Type', content='text/html; charset=iso-8859-1')
+    link(href="/smiley_rotate.gif", rel="SHORTCUT ICON") 
+    block scripts
+      mixin css(['sunset.css'])
+      mixin js(["jquery-1.8.2.min.js"])
+
+    script.
+      navigator.sayswho= (function(){
+        var N= navigator.appName, ua= navigator.userAgent, tem;
+        var M= ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
+        if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
+        M= M? [M[1], M[2]]: [N, navigator.appVersion, '-?'];
+        M[2] = (M[0] == 'Chrome');
+        return M;
+        })();
+
+      var wto = 0;
+      var wstn;
+      function getWeather(stations) {
+        if (stations.length >= 4) {
+          wstn = stations;
+          $.ajax({
+            url: 'http://www.fouter.net/winfo.php?s='+ stations,
+             success: function(wdata) {
+               $('#weather').html(wdata)
+             }
+          })
+          var now  = new Date();
+          var inter = (5*60*1000) - (now % (5*60*1000)) + 30000;
+          if (wto) clearTimeout(wto.timeout);
+          wto = setTimeout('getWeather(wstn)', Math.floor(inter));
+        }
+      }
+
+  body
+
+    #container
+      #top
+
+        ul#menu
+          mixin menu( locals.menu_list, page.metadata.menu )
+
+        h1= locals.title
+
+      #leftnav
+        block lefttop
+          h2 Fouter
+          ul.navlist
+            mixin menu(locals.fouter_list)
+
+        block alert
+          #alert.alertmsg
+            .alerttxt
+
+        block leftbottom
+         //-
+          h2 Archives
+          ul.navlist
+            mixin menu(locals.nav_list)
+
+        #weather
+
+        block quote
+          p.quote
+            | 'If everything seems to be going well, you have obviously 
+            | overlooked something. (Murphy)'
+
+      #content
+        block content
+
+      #footer
+        :markdown
+          [homepage](/ "Home page") | [contact](/contact.html "Contact page") | 
+          [html](http://validator.w3.org/check?uri=referer "W3 html validator") |
+          [css](http://jigsaw.w3.org/css-validator "CSS validator") | 
+          Copyright R.J Middleton @ 2012 | 
+          Template by [www.mitchinson.net](http://www.mitchinson.net) - 
+          This work is licensed under a
+          [Creative Commons Attribution 3.0  License](http://creativecommons.org/licenses/by/3.0/ "Creative commons license")
+        block footscripts
+          script.
+            if (! navigator.sayswho[2]) {
+              $(".solar").hide();
+              $("#alert").html("<h2>Alert</h2><div class='alerttxt'>Solar not avalable with the " +
+              navigator.sayswho[0] + " browser. Try Chrome instead.</div>");}
+            else $('#alert').hide();

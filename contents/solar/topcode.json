@@ -1,0 +1,8 @@
+{
+    "template": "solar.jade",
+    "title": "Topcode Solar Panels",
+    "menu": "Topcode",
+    "solarsite": "http://www.topcode.org",
+    "wstn": "eghh",
+    "wfcst": "ft"
+}

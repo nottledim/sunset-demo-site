@@ -1,0 +1,65 @@
+
+/* ========== WEATHER ========== */
+
+#weather  
+{
+/*  margin: 5% 25% 0 25%;
+  position: absolute;
+  padding-bottom: 3em; */
+  margin-bottom: 1em;	
+}
+
+#weather .wdetails {
+/*	border: 1px solid red; */
+        overflow: auto;
+}
+
+
+#weather .whead {
+              margin: 0 0 10px 0;
+              font-size : 150%;
+	      font-weight: bold;
+              letter-spacing: 5px;
+              color : #FFD300;
+              background : inherit;
+}
+
+#weather .wsource {
+	font-size: small;
+        font-variant: small-caps;
+	margin-left: 1em;
+}
+
+#weather .wstation {
+	float: left;
+        margin-top: 10px;
+/*	width: 49%; */
+}
+
+#weather .wname {
+        margin-bottom: 5px;
+	margin-left: 0.5em;
+	font-weight: bold;
+	font-size: 1em;
+	color: #ff7900;
+}
+
+#weather .wlabels {
+	margin-left: 1em;
+        float: left;
+	line-height: 1.2em;
+	width: 4em;
+	clear: left;
+}
+
+#weather .wdata {
+	float: left;
+	padding-left: 0.25em;
+	font-weight: bold;
+	line-height: 1.2em;
+}
+
+#weather .witem {
+   	font-weight: bold;
+}
+

@@ -1,0 +1,65 @@
+{
+    "locals": { 
+	"title": "The Sunset Web Site",
+	"menu_list": [ 
+	    {"m": "home",      "l": "/", "t": "Home page"},
+	    {"m": "solar",   
+	     "l": "/solar/fernie.html", 
+	     "t": "Fernietickle Solar charts"}, 
+	    {"m": "about",     "l": "/about.html", "t": "About page"}, 
+	    {"m": "contact",   "l": "/contact.html", "t": "Contact page"}
+	],
+	"link_list": [ 
+	    {
+		"m": "SNAPP HAPPY", 
+		"l": "http://www.mitchinson.net", 
+		"t": "Visit my website"},
+	    {
+		"m": "OPEN DESIGNS", 
+		"l": "http://www.opendesigns.org", 
+		"t": "Open Designs"},
+	    {
+		"m": "ANDREAS VIKLUND", 
+		"l": "http://andreasviklund.com", 
+		"t": "website of Andreas Viklund"},
+	    {
+		"m": "JAMES KOSTER", 
+		"l": "http://www.jameskoster.co.uk", 
+		"t": "website of James Koster"},
+	    {
+		"m": "CSS PLAY", 
+		"l": "http://www.cssplay.co.uk", 
+		"t": "Stu Nicholls"},
+	    {
+		"m": "LISTAMATIC", 
+		"l": "http://css.maxdesign.com.au/listamatic/", 
+		"t": "CSS menus"},
+	    {
+		"m": "LAYOUTGALA", 
+		"l": "http://blog.html.it/layoutgala", 
+		"t": "a set of 40 CSS layouts"},
+	    {
+		"m": "BLUEROBOT", 
+		"l": "http://www.bluerobot.com/web/layouts", 
+		"t": "the layout reservoir"}
+	],
+	"nav_list": [
+	    {
+		"m": "January", "l": "#"},
+	    {
+		"m": "February", "l": "#"},
+	    {
+		"m": "March", "l": "#"},
+	    {
+		"m": "April", "l": "#"},
+	    {
+		"m": "May", "l": "#"}
+	],
+	"fouter_list": [
+	    {
+		"m": "Mail", "l": "http://www.fouter.net/mail"},
+	    {
+		"m": "Sieve filter", "l": "http://www.fouter.net/smartsieve"}
+	    ]
+    }
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml"></html><head><title>Resources | Sunset</title><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1"><link href="/smiley_rotate.gif" rel="SHORTCUT ICON"><link href="/css/sunset.css" rel="stylesheet" type="text/css"><script src="/js/jquery-1.8.2.min.js" type="text/javascript"></script><link href="/css/weather.css" rel="stylesheet" type="text/css"><script>navigator.sayswho= (function(){
+  var N= navigator.appName, ua= navigator.userAgent, tem;
+  var M= ua.match(/(opera|chrome|safari|firefox|msie)\/?\s*(\.?\d+(\.\d+)*)/i);
+  if(M && (tem= ua.match(/version\/([\.\d]+)/i))!= null) M[2]= tem[1];
+  M= M? [M[1], M[2]]: [N, navigator.appVersion, '-?'];
+  M[2] = (M[0] == 'Chrome');
+  return M;
+  })();
+
+var wto = 0;
+var wstn;
+function getWeather(stations) {
+  if (stations.length >= 4) {
+    wstn = stations;
+    $.ajax({
+      url: 'http://www.fouter.net/winfo.php?s='+ stations,
+       success: function(wdata) {
+         $('#weather').html(wdata)
+       }
+    })
+    var now  = new Date();
+    var inter = (5*60*1000) - (now % (5*60*1000)) + 30000;
+    if (wto) clearTimeout(wto.timeout);
+    wto = setTimeout('getWeather(wstn)', Math.floor(inter));
+  }
+}
+</script></head><body><div id="container"><div id="top"><ul id="menu"><li><a href="/" title="Home page">home</a></li><li class="solar"><a href="/solar/fernie.html" title="Fernietickle Solar charts">solar</a></li><li><a href="/about.html" title="About page">about</a></li><li><a href="/contact.html" title="Contact page">contact</a></li></ul><h1>The Sunset Web Site</h1></div><div id="leftnav"><h2>Fouter</h2><ul class="navlist"><li><a href="http://www.fouter.net/mail" title="undefined">Mail</a></li><li><a href="http://www.fouter.net/smartsieve" title="undefined">Sieve filter</a></li></ul><div id="alert" class="alertmsg"><div class="alerttxt"></div></div><div id="weather"></div><p class="quote">'If everything seems to be going well, you have obviously 
+overlooked something. (Murphy)'</p></div><div id="content"><h2 id="resources">Resources</h2>
+<p>By Neil McGeachy</p>
+<h3 id="footwork">Footwork</h3>
+<p>The first and must important part of achieving good climbing
+technique is learning to use our feet effectively. We hear lots
+of people saying certain climbers have good footwork, but what
+does it actually mean?</p>
+<p>In my opinion the two most important factors of good footwork are:</p>
+<ol>
+<li>Being able to place your feet quickly and precisely.</li>
+<li>Being able to transfer your weight over your feet.</li>
+</ol>
+<h4 id="be-quick-and-precise-">Be quick and precise:</h4>
+<p>When we are placing our feet we should be aiming to use the front
+of our rock boot as much as possible. This means the inside edge,
+outside edge and the front point! This allows us to be precise
+with our foot placements when standing on smaller holds, allows
+us to twist and turn when climbing by simply pivoting on our
+feet, and minimises the chance of our feet slipping off.  Using
+this part of our feet also allows us to gain more force and
+height from the foot placement. Think about how your foot works
+when jumping, you flex your feet and push off from your toes. Its
+the same principle when flexing your foot to stretch for a
+distant climbing hold or flexing your foot when powering up for
+that dyno! Obviously, we also have to learn when it is
+appropriate to heel hook or toe hook (usually of very steep
+ground), but the majority of foot placements should be made as
+above.</p>
+<h4 id="how-do-we-improve-this-">How do we improve this?</h4>
+<p>It may sound simple, but looking at your feet when you place them
+helps. Make a conscious effort to look at the foot hold, and
+place your foot exactly where you are looking. If you are
+clumping around with your feet, banging them off the wall each
+time you place them or hoping about on a foot hold to readjust,
+you are wasting valuable energy when you climb. The easiest way I
+have found to practise this is to think really hard about it when
+you are climbing easy warm up climbs, slow down and really
+concentrate on placing your feet quietly in control. As you
+improve at this, begin to attempt climbing these routes quicker,
+but still be precise and controlled with your feet
+placements. Over time this will improve your footwork on all of
+your climbs. Another training tip I have for improving this is to
+attempt climbing boulder problems in the arena using features
+only for feet. This will help you learn how to trust standing on
+small holds, it will help you improve your judgement with
+foothold selection and it will also help build up core strength
+as keeping your feet on small holds when climbing steeper
+problems requires a lot of body tension!.</p>
+<h4 id="transferring-your-weight-over-your-feet-">Transferring your weight over your feet:</h4>
+<p>Spend time during your next session watching a really good
+climber on a route up our main lead wall. As they move up the
+wall you will see them transfer their body from side to side or
+twist their whole body each time they reach for a hold! The
+climber is doing this so that they can move their weight over the
+foot that they are pushing off, thus moving in the most efficient
+way. If your weight is over your foot when you push up on it, you
+use far less pulling energy in your arms! A really good climber
+to observe doing this is Nat Berry, as she is phenomenal at this
+technique in climbing. Her amazing level of flexibility in her
+hips, allows her to transfer her weight over any foothold
+regardless of how awkwardly placed they are!</p>
+<p>How do we improve this? This is a really important skill to
+master, as the whole point of good technique is &#39;minimising the
+amount of energy used in our arms&#39; ! The less energy we use in
+our arms, the longer we can climb on a route before we get
+tired. Learning to transfer our weight over our feet makes us
+more efficient at how we use our feet and reduces the strain on
+our arms, thus making us more technical climbers.  The best way I
+have found to practise this technique is to spend time on the
+&#39;Speed Wall&#39; slab area. Practice climbing the routes with one
+hand, but really concentrate on getting the upward motion from
+your legs!. If you have to pull with your hand to make a move,
+stop and think about your feet and body position, then try
+again. Once you have mastered this, make things harder for
+yourself by attempting these climbs with no hands. You can place
+your hands flat against the wall, but you are not allowed to
+touch any of the holds. It is impossible to achieve this without
+transferring your weight over your feet!</p>
+<p>Finally start experimenting with how we can use twisting to help
+us transfer our weight over our feet. Again use the &#39;Speed Wall&#39;
+slab area. Force yourself to only use the outside edge of your
+climbing shoe, in order to do this you will have to twist your
+whole body round each time you stand up on a foot. An easy way to
+think about it is to say to yourself - &#39;if I am standing up on my
+right foot I have to twist to face left, if i am standing up on
+my left foot I have to twist to face the right&#39;!</p>
+<p>Spend a bit of time each session concentrating on practising good
+footwork and you will become very good at using your
+feet. Remember, there is more to being good at climbing than just
+getting fitter and stronger! If we don&#39;t move well when we are
+climbing we are not going to climb to our full potential!</p>
+</div><div id="footer"><p><a href="/" title="Home page">homepage</a> | <a href="/contact.html" title="Contact page">contact</a> | 
+<a href="http://validator.w3.org/check?uri=referer" title="W3 html validator">html</a> |
+<a href="http://jigsaw.w3.org/css-validator" title="CSS validator">css</a> | 
+Copyright R.J Middleton @ 2012 | 
+Template by <a href="http://www.mitchinson.net) - 
+This work is licensed under a
+[Creative Commons Attribution 3.0  License](http://creativecommons.org/licenses/by/3.0/" title="Creative commons license">www.mitchinson.net</a></p><script>if (! navigator.sayswho[2]) {
+  $(".solar").hide();
+  $("#alert").html("<h2>Alert</h2><div class='alerttxt'>Solar not avalable with the " +
+  navigator.sayswho[0] + " browser. Try Chrome instead.</div>");}
+else $('#alert').hide();</script><script><getWeather #{page.metadata.wstn}></getWeather></script></div></div></body>

@@ -1,0 +1,124 @@
+extends sunset
+
+append scripts
+   mixin css(["sunny/jquery-ui-1.8.24.custom.css", "fernietickle-custom.css", "sunset.css", 'weather.css'])
+
+   mixin js([ "jquery-ui-1.8.24.custom.min.js", "highcharts.js", "fernietickle.js"])
+
+   mixin set("PV.url =", page.metadata.solarsite +"/")
+
+block lefttop
+  h2 Solar Sites
+  ul.navlist
+    mixin list([ {"m": "Fernietickle", "l": "/solar/fernie.html", "t": "Fernietickle Charts" },  {"m": "Topcode", "l": "/solar/topcode.html", "t": "Topcode charts" } ], page.metadata.menu)
+
+block leftbottom
+
+append footscripts
+  script.
+    getWeather('#{page.metadata.wstn}')
+    $('#wfcast').load('http://www.fouter.net/winfo.php?a=#{page.metadata.wfcst} .content')
+
+block content
+   h2= page.title
+
+   #tabs
+      ul
+        li
+          a(href='#tabs-0') Day
+        li
+          a(href='#tabs-1') Days
+        li
+          a(href='#tabs-2') Months
+        li
+          a(href='#tabs-3') Years
+        li
+          a(href='#tabs-4') Forecast
+      #tabs-0
+        .tabtop
+          table(style='width: 100%;')
+            tr
+              td
+                | Select date:
+                input#mydatepick(type='hidden')
+                img#gotoToday(src='/css/images/Button-Last.png', alt='Today', tooltip='Go to today')
+              td(align='center', style='font-size: small;')
+                | Sunrise:
+                span#sun-r
+              td(align='center', style='font-size: small;')
+                | Sunset:
+                span#sun-s
+              td(style='text-align: right;')
+                | Meter:
+                span#meter-day
+                | kW.h
+        #resizer.hcdiv
+          #daysimg.hcimg
+        #reading-show
+          p
+            table(style='width: 100%; font-size: small;')
+              tr
+                th(align='right')
+                  | Last Reading (
+                  span#reading-dpt
+                  | ):-
+                td(align='right')
+                  | Power sample:
+                  span#reading-pwr
+                  | W
+                td(align='center')
+                  | Power rate:
+                  span#reading-smh
+                  | W
+                td(align='left')
+                  | Energy:
+                  span#reading-nrg
+                  | kW.h
+            //
+              button id='gohome'>Home</button
+        #dayend-show
+          p
+            table(style='width: 100%; font-size: small;')
+              tr
+                th(align='right') Generation:-
+                td(align='right')
+                  | Run time:
+                  span#dayend-rtm
+                td(align='center')
+                  | Average power:
+                  span#dayend-ave
+                  | W
+                td(align='left')
+                  | Total energy:
+                  span#dayend-nrg
+                  | kW.h
+        p(style='font-size: smaller;')
+          input#usesmooth(type='checkbox', onchange='getDayData(\'last\');')
+          | - Use rate rather than sample
+      #tabs-1
+        .tabtop.tabtoptext
+          | 28 day daily average:
+          span#avg28
+          | kW.h
+        .hcdiv
+          #mbdimg.hcimg
+        //
+          button id='chartupd'>Update</button
+        //
+          button id="testybutton">Testy Function</button
+      #tabs-2
+        .tabtop.tabtoptext
+          | 12 month daily average:
+          span#avg12
+          | kW.h
+        .hcdiv
+          #monthimg.hcimg
+      #tabs-3
+        .tabtop.tabtoptext
+          | Total meter:
+          span#meter-year
+          | kW.h
+        .hcdiv
+          #yearimg.hcimg
+      #tabs-4
+        #wfcast
