@@ -1,9 +1,11 @@
 {
   "name": "Sunset",
   "dependencies": {
+    "jstransformer-markdown": "^1.1.0",
     "moment": "2.3.x",
+    "typogr": "0.5.x",
     "underscore": "1.4.x",
-    "typogr": "0.5.x"
+    "wintersmith-stylus": "^0.5.1"
   },
   "private": "true"
 }
