@@ -2,7 +2,7 @@
   "name": "Sunset",
   "dependencies": {
     "jstransformer-markdown": "^1.1.0",
-    "moment": "2.3.x",
+    "moment": "2.19.3",
     "typogr": "0.5.x",
     "underscore": "1.4.x",
     "wintersmith": "^2.2.5",

@@ -1,4 +1,5 @@
 *~
 *.html
+.netlify
 node_modules/
 aliases
